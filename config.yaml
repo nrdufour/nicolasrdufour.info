@@ -1,0 +1,10 @@
+---
+baseurl: "https://www.nicolasrdufour.info/"
+languageCode: "en-us"
+title: "Nicolas R Dufour"
+
+pygmentsuseclasses: false
+pygmentsstyle: pastie
+
+metaDataFormat: "yaml"
+---
