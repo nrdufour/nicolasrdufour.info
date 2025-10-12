@@ -1,0 +1,7 @@
+baseURL = "https://www.nicolasrdufour.info/"
+languageCode = "en-us"
+title = "Nicolas R Dufour"
+
+[markup.highlight]
+noClasses = false
+style = "pastie"

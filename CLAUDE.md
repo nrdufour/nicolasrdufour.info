@@ -8,7 +8,7 @@ This is a personal portfolio website for Nicolas R. Dufour built with Hugo stati
 
 ## Architecture
 
-- **Static Site Generator**: Hugo (legacy configuration using config.yaml)
+- **Static Site Generator**: Hugo (modern TOML configuration)
 - **Single Page Site**: Main layout is `layouts/index.html`
 - **Modern Bootstrap**: Uses Bootstrap 5.3.2 with Bootstrap Icons
 - **Responsive Design**: Mobile-first design that works across all devices
@@ -17,7 +17,7 @@ This is a personal portfolio website for Nicolas R. Dufour built with Hugo stati
 
 ```
 .
-├── config.yaml              # Hugo site configuration (legacy YAML format)
+├── hugo.toml               # Hugo site configuration
 ├── layouts/
 │   └── index.html          # Main homepage template
 ├── static/
@@ -64,7 +64,7 @@ The built site in `public/` can be deployed to any static hosting service.
 ## Configuration
 
 - **Base URL**: `https://www.nicolasrdufour.info/`
-- **Config Format**: Uses legacy `config.yaml` (consider migrating to `hugo.toml` or `config.toml` for modern Hugo)
+- **Config Format**: Modern `hugo.toml` format
 - The site uses Hugo's default content rendering with a custom homepage layout
 
 ## Styling
