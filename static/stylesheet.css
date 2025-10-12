@@ -1,34 +1,113 @@
-/* Sticky footer styles
- * -------------------------------------------------- */
-html {
-    position: relative;
-    min-height: 100%;
+/* ================================================
+   Modern Professional Styles
+   ================================================ */
+
+/* Root Variables */
+:root {
+    --primary-color: #0d6efd;
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --bg-light: #f8f9fa;
+    --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
+
+/* Global Styles */
 body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
+/* Profile Image */
+.profile-img {
+    object-fit: cover;
+    border: 4px solid #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Card Enhancements */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Custom Link Styles */
+a {
+    transition: color 0.2s ease;
+}
+
+/* Button Hover Effects */
+.btn {
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+/* Header Styles */
+header h1 {
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+}
+
+/* List Icons */
+.bi-check-circle-fill {
+    font-size: 1.1rem;
+}
+
+/* Footer Styles */
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    background-color: #f5f5f5;
+    background-color: var(--bg-light);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+/* Responsive Typography */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2rem;
+    }
 
-/* Custom page CSS
- * -------------------------------------------------- */
-/* Not required for template or sticky footer method. */
+    .lead {
+        font-size: 1rem;
+    }
 
-.container {
-    width: auto;
-    max-width: 680px;
-    padding: 0 15px;
+    .profile-img {
+        width: 100px !important;
+        height: 100px !important;
+    }
 }
 
-.container .text-muted {
-    margin: 20px 0;
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus Styles for Accessibility */
+a:focus, button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .btn, .shadow, .shadow-sm {
+        box-shadow: none !important;
+    }
+
+    .card {
+        border: 1px solid #dee2e6 !important;
+    }
 }
