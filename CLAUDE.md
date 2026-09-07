@@ -1,78 +1,34 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Guidance for Claude Code working in this repository.
 
-## Project Overview
+## What this is
 
-This is a personal portfolio website for Nicolas R. Dufour built with Hugo static site generator. It's a single-page site showcasing professional experience and contact information.
+Personal landing page for nicolasrdufour.info, built with Hugo. A single page:
+`layouts/index.html` plus `static/` (favicon, photo, stylesheet). There is no
+`content/` directory, so taxonomies, RSS and the sitemap are disabled in
+`hugo.toml`. Bootstrap 5 and Bootstrap Icons load from jsDelivr.
 
-## Architecture
+## Commands
 
-- **Static Site Generator**: Hugo (modern TOML configuration)
-- **Single Page Site**: Main layout is `layouts/index.html`
-- **Modern Bootstrap**: Uses Bootstrap 5.3.2 with Bootstrap Icons
-- **Responsive Design**: Mobile-first design that works across all devices
+The flake's dev shell (loaded by direnv) carries every tool. `just` lists the
+recipes; `just check` is exactly what CI runs, so a red build reproduces in one
+command.
 
-## File Structure
+- `just serve` - Hugo dev server with live reload
+- `just build` - build into `public/`
+- `just check` - fmt-check, lint, build-check, confusables
 
-```
-.
-├── hugo.toml               # Hugo site configuration
-├── layouts/
-│   └── index.html          # Main homepage template
-├── static/
-│   ├── favicon.ico         # Site favicon
-│   ├── nicolas.png         # Profile image
-│   └── stylesheet.css      # Custom CSS styles
-└── public/                 # Generated site (gitignored)
-```
+## Conventions
 
-## Development Environment Setup
-
-This project uses Nix and direnv for reproducible development environment:
-
-```bash
-# Allow direnv to load the Nix environment (first time only)
-direnv allow
-
-# Hugo will be automatically available after direnv loads
-```
-
-## Common Commands
-
-### Development
-```bash
-# Start Hugo development server with live reload
-hugo server -D
-
-# Start server and open in browser
-hugo server -D --navigateToChanged
-```
-
-### Building
-```bash
-# Build production site (outputs to public/)
-hugo
-
-# Build with minification
-hugo --minify
-```
-
-### Deployment
-The built site in `public/` can be deployed to any static hosting service.
-
-## Configuration
-
-- **Base URL**: `https://www.nicolasrdufour.info/`
-- **Config Format**: Modern `hugo.toml` format
-- The site uses Hugo's default content rendering with a custom homepage layout
-
-## Styling
-
-- Bootstrap 5.3.2 (latest) loaded from jsDelivr CDN
-- Bootstrap Icons for modern iconography
-- Custom CSS in `static/stylesheet.css` with:
-  - CSS custom properties for theming
-  - Hover effects and transitions
-  - Responsive typography
-  - Accessibility improvements
+- **A convention arrives with its gate.** If something matters enough to agree
+  on, add the check to `just check` in the same change. An unenforced
+  convention decays.
+- **ASCII in source, with judgement.** No characters confusable with ASCII or
+  invisible: em and en dashes, minus signs, smart quotes, middle dots, ellipses,
+  non-breaking and zero-width spaces. Visually distinct symbols are fine and
+  wanted - degrees, arrows, `>=`. CI enforces exactly this.
+- **Tool versions live in `flake.nix`**, nowhere else. No version numbers in
+  workflow YAML.
+- **Renovate defaults are shared** (`nemo/renovate-config`). `renovate.json5`
+  only carries this repo's exceptions.
