@@ -1,6 +1,9 @@
 baseURL = "https://www.nicolasrdufour.info/"
-languageCode = "en-us"
+locale = "en-us"
 title = "Nicolas R Dufour"
+
+# Single page site: nothing to render for taxonomies, RSS or a sitemap.
+disableKinds = ["taxonomy", "term", "rss", "sitemap"]
 
 [markup.highlight]
 noClasses = false
