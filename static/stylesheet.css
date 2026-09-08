@@ -223,26 +223,16 @@ h3 {
     font-weight: 400;
 }
 
-/* Skills: one tag per tool, so the eye can pick them out */
+/* Skills: one tool per line, indented under its group */
 
 .skills dd {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid var(--rule);
+    line-height: 1.45;
 }
 
 .skills dd span {
-    background: var(--paper);
-    border: 1px solid var(--rule);
-    border-radius: 3px;
-    padding: 0.1rem 0.5rem;
-    font-size: 0.85rem;
-    line-height: 1.5;
-}
-
-.side p {
-    margin: 0;
-    font-size: 0.95rem;
+    display: block;
 }
 
 /* Links */
