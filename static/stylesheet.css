@@ -208,13 +208,36 @@ h3 {
 }
 
 .side dt {
-    color: var(--muted);
-    font-size: 0.9rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
 }
 
 .side dd {
-    margin: 0 0 0.6rem;
+    margin: 0 0 0.9rem;
     font-size: 0.95rem;
+}
+
+.education dt {
+    color: var(--warm);
+    font-weight: 400;
+}
+
+/* Skills: one tag per tool, so the eye can pick them out */
+
+.skills dd {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.skills dd span {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.1rem 0.5rem;
+    font-size: 0.85rem;
+    line-height: 1.5;
 }
 
 .side p {
