@@ -1,113 +1,179 @@
-/* ================================================
-   Modern Professional Styles
-   ================================================ */
-
-/* Root Variables */
 :root {
-    --primary-color: #0d6efd;
-    --text-dark: #212529;
-    --text-muted: #6c757d;
-    --bg-light: #f8f9fa;
-    --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    --paper: #f2f3f0;
+    --ink: #17213a;
+    --muted: #5b6270;
+    --rule: #c9cdd3;
+    --accent: #1f6e78;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Global Styles */
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    color: var(--text-dark);
-    line-height: 1.6;
-}
-
-/* Profile Image */
-.profile-img {
-    object-fit: cover;
-    border: 4px solid #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.profile-img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2) !important;
-}
-
-/* Card Enhancements */
-.card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.1) !important;
-}
-
-/* Custom Link Styles */
-a {
-    transition: color 0.2s ease;
-}
-
-/* Button Hover Effects */
-.btn {
-    transition: all 0.3s ease;
-    font-weight: 500;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-}
-
-/* Header Styles */
-header h1 {
-    color: var(--text-dark);
-    letter-spacing: -0.5px;
-}
-
-/* List Icons */
-.bi-check-circle-fill {
-    font-size: 1.1rem;
-}
-
-/* Footer Styles */
-.footer {
-    background-color: var(--bg-light);
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-/* Responsive Typography */
-@media (max-width: 768px) {
-    .display-4 {
-        font-size: 2rem;
-    }
-
-    .lead {
-        font-size: 1rem;
-    }
-
-    .profile-img {
-        width: 100px !important;
-        height: 100px !important;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --paper: #161a22;
+        --ink: #e6e4dc;
+        --muted: #9aa1ad;
+        --rule: #333a47;
+        --accent: #6cc3cc;
     }
 }
 
-/* Smooth Scrolling */
+* {
+    box-sizing: border-box;
+}
+
 html {
-    scroll-behavior: smooth;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 100%;
+    line-height: 1.55;
+    -webkit-text-size-adjust: 100%;
 }
 
-/* Focus Styles for Accessibility */
-a:focus, button:focus {
-    outline: 2px solid var(--primary-color);
-    outline-offset: 2px;
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 2rem 1.25rem;
 }
 
-/* Print Styles */
-@media print {
-    .btn, .shadow, .shadow-sm {
-        box-shadow: none !important;
+.card {
+    width: 100%;
+    max-width: 38rem;
+}
+
+/* Intro: the name is the page */
+
+.intro {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 1.25rem;
+    align-items: end;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--accent);
+}
+
+.portrait {
+    grid-row: 1 / 3;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.intro h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+}
+
+.role {
+    margin: 0.35rem 0 0;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+/* About */
+
+.about {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.summary {
+    margin: 0 0 1.25rem;
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.highlights {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.highlights li {
+    margin-bottom: 0.5rem;
+}
+
+.highlights li::marker {
+    color: var(--accent);
+}
+
+/* Contact */
+
+.contact {
+    padding: 1.5rem 0;
+}
+
+.contact h2 {
+    margin: 0 0 0.5rem;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.contact ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.75rem;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* Footer */
+
+footer p {
+    margin: 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 30rem) {
+    .intro {
+        grid-template-columns: 1fr;
+        row-gap: 0.75rem;
     }
 
-    .card {
-        border: 1px solid #dee2e6 !important;
+    .portrait {
+        grid-row: auto;
+        width: 5rem;
+        height: 5rem;
+    }
+}
+
+@media print {
+    html {
+        background: #fff;
+        color: #000;
+    }
+
+    body {
+        padding: 0;
     }
 }
