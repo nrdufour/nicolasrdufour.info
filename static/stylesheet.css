@@ -1,20 +1,32 @@
 :root {
-    --paper: #f2f3f0;
+    --paper: #f4f4f1;
+    --panel: #e7ebe9;
     --ink: #17213a;
     --muted: #5b6270;
     --rule: #c9cdd3;
-    --accent: #1f6e78;
+    --band: #17384a;
+    --band-ink: #eef1ee;
+    --band-muted: #a9c0c9;
+    --band-link: #8fd6df;
+    --accent: #1f7f8c;
+    --warm: #b7791f;
     --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
     --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --paper: #161a22;
+        --paper: #141922;
+        --panel: #1b2230;
         --ink: #e6e4dc;
         --muted: #9aa1ad;
         --rule: #333a47;
+        --band: #1c3646;
+        --band-ink: #eef1ee;
+        --band-muted: #a9c0c9;
+        --band-link: #8fd6df;
         --accent: #6cc3cc;
+        --warm: #e0a848;
     }
 }
 
@@ -33,38 +45,24 @@ html {
 
 body {
     margin: 0;
-    padding: 2.5rem 1.5rem;
 }
 
-/* Page grid: masthead across the top, body left, sidebar right */
+/* Masthead: a full-width band, content aligned with the page below */
 
-.page {
-    max-width: 66rem;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 17rem;
-    grid-template-areas:
-        "masthead masthead"
-        "body side"
-        "footer footer";
-    column-gap: 3.5rem;
+.band {
+    background: var(--band);
+    color: var(--band-ink);
+    border-bottom: 4px solid var(--warm);
 }
-
-.masthead { grid-area: masthead; }
-.body     { grid-area: body; }
-.side     { grid-area: side; }
-footer    { grid-area: footer; }
-
-/* Masthead */
 
 .masthead {
+    max-width: 66rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
     column-gap: 1.5rem;
-    padding-bottom: 1.5rem;
-    margin-bottom: 2rem;
-    border-bottom: 2px solid var(--accent);
 }
 
 .portrait {
@@ -72,6 +70,7 @@ footer    { grid-area: footer; }
     height: 6rem;
     border-radius: 50%;
     object-fit: cover;
+    border: 3px solid var(--warm);
 }
 
 .masthead h1 {
@@ -85,7 +84,7 @@ footer    { grid-area: footer; }
 
 .role {
     margin: 0.35rem 0 0;
-    color: var(--muted);
+    color: var(--band-muted);
 }
 
 .contact {
@@ -96,6 +95,28 @@ footer    { grid-area: footer; }
     line-height: 1.8;
 }
 
+.contact a {
+    color: var(--band-link);
+}
+
+/* Page grid: body left, sidebar right */
+
+.page {
+    max-width: 66rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 18rem;
+    grid-template-areas:
+        "body side"
+        "footer footer";
+    column-gap: 3rem;
+}
+
+.body { grid-area: body; }
+.side { grid-area: side; }
+footer { grid-area: footer; }
+
 /* Headings */
 
 h2 {
@@ -103,6 +124,7 @@ h2 {
     font-family: var(--serif);
     font-weight: 400;
     font-size: 1.2rem;
+    color: var(--accent);
 }
 
 h3 {
@@ -138,7 +160,7 @@ h3 {
 }
 
 .highlights li::marker {
-    color: var(--accent);
+    color: var(--warm);
 }
 
 /* Career: a real sequence, so dates lead */
@@ -157,7 +179,7 @@ h3 {
 }
 
 .when {
-    color: var(--muted);
+    color: var(--warm);
     font-variant-numeric: tabular-nums;
     padding-top: 0.1rem;
 }
@@ -168,7 +190,14 @@ h3 {
     max-width: 38rem;
 }
 
-/* Sidebar */
+/* Sidebar on its own panel */
+
+.side {
+    background: var(--panel);
+    padding: 1.5rem 1.5rem 0.25rem;
+    align-self: start;
+    border-radius: 4px;
+}
 
 .side section {
     margin-bottom: 1.75rem;
@@ -227,15 +256,9 @@ footer p {
     .page {
         grid-template-columns: 1fr;
         grid-template-areas:
-            "masthead"
             "body"
             "side"
             "footer";
-    }
-
-    .side {
-        padding-top: 1.75rem;
-        border-top: 1px solid var(--rule);
     }
 
     .masthead {
@@ -253,7 +276,8 @@ footer p {
 }
 
 @media (max-width: 30rem) {
-    body {
+    .masthead,
+    .page {
         padding: 1.5rem 1.25rem;
     }
 
@@ -269,7 +293,18 @@ footer p {
         color: #000;
     }
 
-    body {
+    .band {
+        background: none;
+        color: #000;
+        border-bottom-color: #000;
+    }
+
+    .contact a {
+        color: #000;
+    }
+
+    .side {
+        background: none;
         padding: 0;
     }
 }
