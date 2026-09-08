@@ -106,7 +106,7 @@ body {
     margin: 0 auto;
     padding: 2.5rem 1.5rem;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 18rem;
+    grid-template-columns: minmax(0, 1fr) 19rem;
     grid-template-areas:
         "body side"
         "footer footer";
@@ -229,10 +229,9 @@ h3 {
     padding-left: 0.75rem;
     border-left: 2px solid var(--rule);
     line-height: 1.45;
-}
-
-.skills dd span {
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 0.75rem;
 }
 
 /* Links */
