@@ -4,73 +4,135 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <meta name="description" content="Nicolas R. Dufour - physicist turned engineer, building and running software since 1998. SRE and platform engineering; Go, Rust, Kotlin, Nix; NixOS and Kubernetes.">
+    <meta name="description" content="Nicolas R. Dufour - physicist turned engineer, building and running software since 1998. Senior Staff Platform Engineer: Kubernetes, GitOps, SRE; Go, Rust, Java, Nix.">
     <meta name="author" content="Nicolas R. Dufour">
     <title>{{ .Site.Title }} - Senior Staff Platform Engineer</title>
     <link rel="icon" href="/favicon.ico">
     <link rel="stylesheet" href="/stylesheet.css">
   </head>
   <body>
-    <main class="card">
-      <header class="intro">
+    <div class="page">
+      <header class="masthead">
         <img src="/nicolas.png" class="portrait" alt="" width="96" height="96">
-        <h1>Nicolas R. Dufour</h1>
-        <p class="role">Senior Staff Platform Engineer</p>
-      </header>
-
-      <section class="about">
-        <p class="summary">Physicist turned engineer, building and running software since 1998, on premise and in the cloud. Today that means SRE and platform engineering: Kubernetes, GitOps, observability, and the people who use them. Before it, air traffic simulation systems, content management platforms and a lot of Java.</p>
-        <ul class="highlights">
-          <li><strong>Expert in Linux</strong> since 1994 and <strong>in Java</strong> since 1996.</li>
-          <li><strong>Team leader with a hands-on approach</strong> ("player/coach"); good at drawing out what a customer actually needs and turning it into meaningful use cases.</li>
-          <li><strong>Builds from scratch to understand what is underneath:</strong> a bare-metal OS in Rust, a web browser, Atari ST assembly.</li>
-          <li><strong>Runs his own infrastructure:</strong> a 14-host NixOS and Kubernetes homelab with Forgejo, Kanidm and ArgoCD.</li>
-        </ul>
-      </section>
-
-      <section class="skills">
-        <h2>Skills</h2>
-        <dl>
-          <dt>Container orchestration</dt><dd>Kubernetes, Helm, Docker</dd>
-          <dt>Infrastructure as code</dt><dd>Terraform, Ansible, Nix</dd>
-          <dt>CI/CD and GitOps</dt><dd>Git, GitHub Actions, GitLab, ArgoCD, Flux</dd>
-          <dt>Monitoring</dt><dd>Grafana, Prometheus, ELK, Splunk</dd>
-          <dt>Cloud platforms</dt><dd>AWS, Azure, GCP, DigitalOcean</dd>
-          <dt>Programming</dt><dd>Go, Rust, Java, Python, C, Erlang, Kotlin</dd>
-          <dt>Scripting</dt><dd>Bash, PowerShell</dd>
-          <dt>Databases</dt><dd>PostgreSQL, MySQL, Oracle, Aura</dd>
-          <dt>AI tooling</dt><dd>Claude Code, agents, Hermes agent</dd>
-        </dl>
-      </section>
-
-      <section class="career">
-        <h2>Career</h2>
-        <ol>
-          <li><span class="when">2023 - now</span><span class="what"><strong>Senior Staff Platform Engineer</strong>, Nav Technologies</span></li>
-          <li><span class="when">2021 - 2023</span><span class="what"><strong>Senior SRE</strong>, Sectigo</span></li>
-          <li><span class="when">2016 - 2021</span><span class="what"><strong>Senior DevOps Architect</strong>, Rivet Logic</span></li>
-          <li><span class="when">2010 - 2016</span><span class="what"><strong>Software Architect</strong>, Rivet Logic</span></li>
-          <li><span class="when">2007 - 2009</span><span class="what"><strong>Senior Software Architect</strong>, Time Inc</span></li>
-          <li><span class="when">2006 - 2010</span><span class="what"><strong>R&amp;D Engineer</strong>, IPsoft</span></li>
-          <li><span class="when">2004 - 2009</span><span class="what"><strong>Linux Team Leader</strong>, NeoMetSys, Paris</span></li>
-          <li><span class="when">1999 - 2004</span><span class="what"><strong>Consultant</strong>, NeoSys, Paris</span></li>
-        </ol>
-        <p class="edu">Master in Computer Science and Geoscience, Universite de Paris 6, 1998.</p>
-      </section>
-
-      <section class="contact">
-        <h2>Connect</h2>
-        <ul>
-          <li><a href="mailto:nicolas.r.dufour@gmail.com">nicolas.r.dufour@gmail.com</a></li>
+        <div class="identity">
+          <h1>Nicolas R. Dufour</h1>
+          <p class="role">Senior Staff Platform Engineer</p>
+        </div>
+        <ul class="contact">
+          <li><a href="mailto:ndufour@ptinem.casa">ndufour@ptinem.casa</a></li>
           <li><a href="https://www.linkedin.com/in/nrdufour" rel="me noopener">LinkedIn</a></li>
           <li><a href="https://github.com/nrdufour" rel="me noopener">GitHub</a></li>
           <li><a href="/Nicolas_Dufour_Resume.pdf">Resume (PDF)</a></li>
         </ul>
-      </section>
+      </header>
+
+      <main class="body">
+        <section class="about">
+          <p class="summary">Physicist turned engineer, building and running software since 1998, on premise and in the cloud. Today that means SRE and platform engineering: Kubernetes, GitOps, observability, and the people who use them. Before it, air traffic simulation systems, content management platforms and a lot of Java.</p>
+          <ul class="highlights">
+            <li><strong>Expert in Linux</strong> since 1994 and <strong>in Java</strong> since 1996.</li>
+            <li><strong>Team leader with a hands-on approach</strong> ("player/coach"); good at drawing out what a customer actually needs and turning it into meaningful use cases.</li>
+            <li><strong>Builds from scratch to understand what is underneath:</strong> a bare-metal OS in Rust, a web browser, Atari ST assembly.</li>
+            <li><strong>Runs his own infrastructure:</strong> a 14-host NixOS and Kubernetes homelab with Forgejo, Kanidm and ArgoCD.</li>
+          </ul>
+        </section>
+
+        <section class="career">
+          <h2>Career</h2>
+          <ol>
+            <li>
+              <span class="when">2023 - now</span>
+              <div class="what">
+                <h3>Senior Staff Platform Engineer, Nav Technologies</h3>
+                <p>Leading SRE practices. ArgoCD-based GitOps pipeline, automated Kubernetes cluster creation for ephemeral and production environments, cluster migrations, Grafana and Prometheus next to Splunk, the DR process, and the move from GitLab to GitHub.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">2021 - 2023</span>
+              <div class="what">
+                <h3>Senior SRE, Sectigo</h3>
+                <p>Certificate Transparency services and automated certificate issuance workflows. Kubernetes with Flux v2, Kustomize and Helm; Proxmox and VMware; Ansible, Terraform and Puppet.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">2016 - 2021</span>
+              <div class="what">
+                <h3>Senior DevOps Architect, Rivet Logic</h3>
+                <p>Cloud migrations for Marriott, SAML authentication systems, CloudFormation, Terraform and Ansible automation. Introduced Kubernetes to the company (Kops, then EKS). Co-led the Managed Services team.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">2010 - 2016</span>
+              <div class="what">
+                <h3>Software Architect, Rivet Logic</h3>
+                <p>Alfresco and Liferay platforms for MasterCard, the NFL, IEEE and Noridian; led three MasterCard marketing sites.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">2007 - 2009</span>
+              <div class="what">
+                <h3>Senior Software Architect, Time Inc</h3>
+                <p>Designed a new CMS for Real Simple, Southern Living, Cooking Light and other magazine sites, and led its team to version 3.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">2006 - 2010</span>
+              <div class="what">
+                <h3>R&amp;D Engineer, IPsoft</h3>
+                <p>Key developer on IPcenter, IPsoft's ITSM platform: AS400 monitoring, an event correlation engine, eBonding integrations. Java, Groovy, Netty, Esper, ActiveMQ.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">2004 - 2009</span>
+              <div class="what">
+                <h3>Linux Team Leader, NeoMetSys, Paris</h3>
+                <p>Air traffic simulation for the European Commission, NASA and the FAA with Metron Aviation, and the South African aviation authority. Led the Linux team.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">1999 - 2004</span>
+              <div class="what">
+                <h3>Consultant, NeoSys, Paris</h3>
+                <p>Ran the primary air traffic flow simulation tool of the TACT research team at Eurocontrol for three years.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </main>
+
+      <aside class="side">
+        <section class="skills">
+          <h2>Skills</h2>
+          <dl>
+            <dt>Container orchestration</dt><dd>Kubernetes, Helm, Docker</dd>
+            <dt>Infrastructure as code</dt><dd>Terraform, Ansible, Nix</dd>
+            <dt>CI/CD and GitOps</dt><dd>Git, GitHub Actions, GitLab, ArgoCD, Flux</dd>
+            <dt>Monitoring</dt><dd>Grafana, Prometheus, ELK, Splunk</dd>
+            <dt>Cloud platforms</dt><dd>AWS, Azure, GCP, DigitalOcean</dd>
+            <dt>Programming</dt><dd>Go, Rust, Java, Python, C, Erlang, Kotlin</dd>
+            <dt>Scripting</dt><dd>Bash, PowerShell</dd>
+            <dt>Databases</dt><dd>PostgreSQL, MySQL, Oracle, Aura</dd>
+            <dt>AI tooling</dt><dd>Claude Code, agents, Hermes agent</dd>
+          </dl>
+        </section>
+
+        <section class="education">
+          <h2>Education</h2>
+          <dl>
+            <dt>1998</dt><dd>Master in Computer Science and Geoscience, Universite de Paris 6</dd>
+            <dt>1995</dt><dd>Bachelor in Geochemistry and Geophysics, Universite de Paris 7</dd>
+          </dl>
+        </section>
+
+        <section class="languages">
+          <h2>Languages</h2>
+          <p>French, English, some German.</p>
+        </section>
+      </aside>
 
       <footer>
         <p>&copy; 2009-{{ now.Year }} Nicolas R. Dufour. All rights reserved.</p>
       </footer>
-    </main>
+    </div>
   </body>
 </html>
