@@ -7,8 +7,9 @@ Guidance for Claude Code working in this repository.
 Personal landing page for nicolasrdufour.info, built with Hugo. A single page:
 `layouts/index.html` plus `static/` (favicon, photo, stylesheet). There is no
 `content/` directory, so taxonomies, RSS and the sitemap are disabled in
-`hugo.toml`. No JavaScript, no web fonts, no third-party requests: one handwritten
-stylesheet with system font stacks and a `prefers-color-scheme` dark palette.
+`hugo.toml`. No JavaScript, no third-party requests: one handwritten
+stylesheet, self-hosted Merriweather (OFL, in `static/fonts/`) for headings and
+a `prefers-color-scheme` dark palette.
 
 ## Commands
 
