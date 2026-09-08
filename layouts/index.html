@@ -3,108 +3,140 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Nicolas R. Dufour - Developer, Engineer, and SRE with 22+ years of experience in software development and system administration.">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="Nicolas R. Dufour - geophysicist turned engineer, building and running software since 1998. Senior Staff Platform Engineer: Kubernetes, GitOps, SRE; Go, Rust, Java, Nix.">
     <meta name="author" content="Nicolas R. Dufour">
-
-    <title>Nicolas R Dufour - Developer | Engineer | SRE</title>
-
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/stylesheet.css">
-
-    <!-- Favicon -->
+    <title>{{ .Site.Title }} - Senior Staff Platform Engineer</title>
     <link rel="icon" href="/favicon.ico">
+    <link rel="preload" href="/fonts/Merriweather-Bold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/Merriweather-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/stylesheet.css">
   </head>
-  <body class="d-flex flex-column min-vh-100">
+  <body>
+    <header class="band">
+      <div class="masthead">
+        <img src="/nicolas.jpg" class="portrait" alt="" width="96" height="96">
+        <div class="identity">
+          <h1>Nicolas R. Dufour</h1>
+          <p class="role">Senior Staff Platform Engineer</p>
+        </div>
+        <ul class="contact">
+          <li><a href="mailto:ndufour@ptinem.casa">ndufour@ptinem.casa</a></li>
+          <li><a href="https://www.linkedin.com/in/nrdufour" rel="me noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/nrdufour" rel="me noopener">GitHub</a></li>
+          <li><a href="/Nicolas_Dufour_Resume.pdf">Resume (PDF)</a></li>
+        </ul>
+      </div>
+    </header>
 
-    <!-- Main Content -->
-    <main class="flex-grow-1">
-      <div class="container py-5">
-
-        <!-- Header Section -->
-        <header class="text-center mb-5">
-          <div class="row align-items-center justify-content-center">
-            <div class="col-auto mb-3 mb-md-0">
-              <img src="nicolas.png" class="rounded-circle profile-img shadow" alt="Nicolas R. Dufour" width="120" height="120" />
-            </div>
-            <div class="col-12 col-md-auto">
-              <h1 class="display-4 fw-bold mb-2">Nicolas R. Dufour</h1>
-              <p class="lead text-muted mb-2">Developer // Engineer // SRE</p>
-              <a href="mailto:nicolas.r.dufour@gmail.com" class="text-decoration-none">
-                <i class="bi bi-envelope-fill me-2"></i>nicolas.r.dufour@gmail.com
-              </a>
-            </div>
-          </div>
-        </header>
-
-        <!-- About Section -->
-        <section class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="card border-0 shadow-sm mb-4">
-              <div class="card-body p-4">
-                <h2 class="h4 mb-4">About</h2>
-                <p class="lead mb-4">A creative and motivated Engineer with 22 years of experience in development, integration, and system/network administration.</p>
-
-                <ul class="list-unstyled">
-                  <li class="mb-3">
-                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                    <strong>Team Leader</strong> with a hands-on approach ("player/coach")
-                  </li>
-                  <li class="mb-3">
-                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                    <strong>Excellent soft skills</strong> for understanding customer needs and building meaningful use cases
-                  </li>
-                  <li class="mb-3">
-                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                    <strong>Quick adaptation</strong> to unfamiliar environments and languages
-                  </li>
-                  <li class="mb-3">
-                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                    <strong>Expert in Linux</strong> (25 years of experience)
-                  </li>
-                  <li class="mb-3">
-                    <i class="bi bi-check-circle-fill text-primary me-2"></i>
-                    <strong>Expert in Java</strong> (22 years of experience)
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Links Section -->
-            <div class="card border-0 shadow-sm">
-              <div class="card-body p-4">
-                <h2 class="h4 mb-4">Connect</h2>
-                <div class="d-grid gap-3">
-                  <a href="https://www.linkedin.com/in/nrdufour" class="btn btn-outline-primary btn-lg d-flex align-items-center justify-content-center" target="_blank" rel="noopener noreferrer">
-                    <i class="bi bi-linkedin me-2"></i>
-                    LinkedIn Profile
-                  </a>
-                  <a href="https://github.com/nrdufour" class="btn btn-outline-dark btn-lg d-flex align-items-center justify-content-center" target="_blank" rel="noopener noreferrer">
-                    <i class="bi bi-github me-2"></i>
-                    GitHub Profile
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div class="page">
+      <main class="body">
+        <section class="about">
+          <p class="summary">Geophysicist turned engineer, building and running software since 1998, on premise and in the cloud. Today that means SRE and platform engineering: Kubernetes, GitOps, observability, and the people who use them. Before it, air traffic simulation systems, content management platforms and a lot of Java.</p>
+          <ul class="highlights">
+            <li><strong>Expert in Linux</strong> since 1994, <strong>SRE</strong> since 2016.</li>
+            <li><strong>Team leader with a hands-on approach</strong> ("player/coach"); good at drawing out what a customer actually needs and turning it into meaningful use cases.</li>
+            <li><strong>Builds from scratch to understand what is underneath:</strong> a bare-metal OS in Rust and a web browser.</li>
+            <li><strong>Runs his own infrastructure:</strong> a 14-host NixOS and Kubernetes homelab with Forgejo, Kanidm and ArgoCD.</li>
+          </ul>
         </section>
 
-      </div>
-    </main>
+        <section class="career">
+          <h2>Career</h2>
+          <ol>
+            <li>
+              <span class="when">2023 - now</span>
+              <div class="what">
+                <h3>Senior Staff Platform Engineer, Nav Technologies</h3>
+                <p>Leading SRE practices. ArgoCD-based GitOps pipeline, automated Kubernetes cluster creation for ephemeral and production environments, cluster migrations, Grafana and Prometheus next to Splunk, the DR process, and the move from GitLab to GitHub.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">2021 - 2023</span>
+              <div class="what">
+                <h3>Senior SRE, Sectigo</h3>
+                <p>Certificate Transparency services and automated certificate issuance workflows. Kubernetes with Flux v2, Kustomize and Helm; Proxmox and VMware; Ansible, Terraform and Puppet.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">2016 - 2021</span>
+              <div class="what">
+                <h3>Senior DevOps Architect, Rivet Logic</h3>
+                <p>Cloud migrations for Marriott, SAML authentication systems, CloudFormation, Terraform and Ansible automation. Introduced Kubernetes to the company (Kops, then EKS). Co-led the Managed Services team.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">2010 - 2016</span>
+              <div class="what">
+                <h3>Software Architect, Rivet Logic</h3>
+                <p>Alfresco and Liferay platforms for MasterCard, the NFL, IEEE and Noridian; led three MasterCard marketing sites.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">2007 - 2009</span>
+              <div class="what">
+                <h3>Senior Software Architect, Time Inc</h3>
+                <p>Designed a new CMS for Real Simple, Southern Living, Cooking Light and other magazine sites, and led its team to version 3.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">2006 - 2010</span>
+              <div class="what">
+                <h3>R&amp;D Engineer, IPsoft</h3>
+                <p>Key developer on IPcenter, IPsoft's ITSM platform: AS400 monitoring, an event correlation engine, eBonding integrations. Java, Groovy, Netty, Esper, ActiveMQ.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">2004 - 2006</span>
+              <div class="what">
+                <h3>Linux Team Leader, NeoMetSys, Paris</h3>
+                <p>Air traffic simulation for the European Commission, NASA and the FAA with Metron Aviation, and the South African aviation authority. Led the Linux team.</p>
+              </div>
+            </li>
+            <li>
+              <span class="when">1999 - 2004</span>
+              <div class="what">
+                <h3>Consultant, NeoSys, Paris</h3>
+                <p>Ran the primary air traffic flow simulation tool of the TACT research team at Eurocontrol for three years.</p>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </main>
 
-    <!-- Footer -->
-    <footer class="footer mt-auto py-4 bg-light">
-      <div class="container text-center">
-        <p class="text-muted mb-0">
-          &copy; 2009-2025 Nicolas R. Dufour. All rights reserved.
-        </p>
-      </div>
-    </footer>
+      <aside class="side">
+        <section class="skills">
+          <h2>Skills</h2>
+          <dl>
+            <dt>Containers <span class="level" style="--n: 5" role="img" aria-label="5 of 5"></span></dt><dd><span>Kubernetes</span><span>Helm</span><span>Docker</span></dd>
+            <dt>Infrastructure as code <span class="level" style="--n: 5" role="img" aria-label="5 of 5"></span></dt><dd><span>Terraform</span><span>Ansible</span><span>Nix</span></dd>
+            <dt>CI/CD and GitOps <span class="level" style="--n: 4" role="img" aria-label="4 of 5"></span></dt><dd><span>Git</span><span>GitHub Actions</span><span>GitLab</span><span>ArgoCD</span><span>Flux</span></dd>
+            <dt>Monitoring <span class="level" style="--n: 3" role="img" aria-label="3 of 5"></span></dt><dd><span>Grafana</span><span>Prometheus</span><span>ELK</span><span>Splunk</span></dd>
+            <dt>Cloud platforms <span class="level" style="--n: 3" role="img" aria-label="3 of 5"></span></dt><dd><span>AWS</span><span>Azure</span><span>GCP</span><span>DigitalOcean</span></dd>
+            <dt>Programming <span class="level" style="--n: 3" role="img" aria-label="3 of 5"></span></dt><dd><span>Go</span><span>Rust</span><span>Java</span><span>Python</span><span>C</span><span>Erlang</span><span>Kotlin</span></dd>
+            <dt>Scripting <span class="level" style="--n: 4" role="img" aria-label="4 of 5"></span></dt><dd><span>Bash</span><span>PowerShell</span></dd>
+            <dt>Databases <span class="level" style="--n: 3" role="img" aria-label="3 of 5"></span></dt><dd><span>PostgreSQL</span><span>MySQL</span><span>Oracle</span><span>Aura</span></dd>
+            <dt>AI tooling <span class="level" style="--n: 4" role="img" aria-label="4 of 5"></span></dt><dd><span>Claude Code</span><span>agents</span><span>Hermes agent</span></dd>
+          </dl>
+        </section>
 
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <section class="education">
+          <h2>Education</h2>
+          <dl>
+            <dt>1998</dt><dd>Master in Computer Science and Geoscience, Universite de Paris 6</dd>
+            <dt>1995</dt><dd>Bachelor in Geochemistry and Geophysics, Universite de Paris 7</dd>
+          </dl>
+        </section>
+
+        <section class="languages">
+          <h2>Languages</h2>
+          <p>French, English, some German.</p>
+        </section>
+      </aside>
+
+      <footer>
+        <p>&copy; 2009-{{ now.Year }} Nicolas R. Dufour. All rights reserved.</p>
+      </footer>
+    </div>
   </body>
 </html>
