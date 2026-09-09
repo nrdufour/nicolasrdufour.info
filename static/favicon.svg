@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Merriweather Bold "N" as an outline, so it renders without the font. -->
+  <rect width="64" height="64" rx="12" fill="#17384a"/>
+  <path fill="#8fd6df" transform="translate(9.1 53) scale(0.02826 -0.02826)" d="M227 140V1336Q188 1342 148 1348.5Q108 1355 69 1362V1486H531L1114 586L1227 357V1336L1056 1362V1486H1551V1362L1397 1336V0H1155L536 945L396 1211V140L599 119V0H69V119Z"/>
+</svg>
