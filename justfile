@@ -9,6 +9,11 @@ serve:
 build:
     hugo --minify
 
+# Regenerate favicon.ico and apple-touch-icon.png from favicon.svg, the source.
+favicon:
+    magick -background none -density 384 static/favicon.svg -define icon:auto-resize=48,32,16 static/favicon.ico
+    magick -background none -density 384 static/favicon.svg -resize 180x180 static/apple-touch-icon.png
+
 # statix and deadnix over every tracked Nix file.
 lint:
     statix check .
