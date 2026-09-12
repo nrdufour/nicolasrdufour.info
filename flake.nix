@@ -20,6 +20,9 @@
             hugo # the site generator; its version is pinned by flake.lock, nowhere else
             just # the task runner; `just` alone lists every recipe
             imagemagick # rasterises favicon.svg into the ico and touch icon (`just favicon`)
+            # `just publish` pushes the built site over SSH.
+            rsync
+            openssh
             tea # forge.internal PRs and issues (see the create-pr skill)
             forgejo-cli # `fj`: same forge, the other CLI
             nixfmt
