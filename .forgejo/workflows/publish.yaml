@@ -2,7 +2,7 @@
 #
 # This workflow deliberately contains no deployment logic: it checks out the
 # repo and calls `just publish`, the same recipe run by hand on calypso. One
-# mechanism, two triggers - so a publish from a laptop and a publish from CI
+# mechanism, two triggers — so a publish from a laptop and a publish from CI
 # cannot drift apart.
 #
 # runs-on: native is required. The publish key is a sops secret rendered onto
@@ -11,12 +11,9 @@
 # in avalanche: nixos/hosts/hawk/forgejo/forgejo-runner.nix). A container job
 # cannot see that path.
 #
-# Gated on the PUBLISH_ENABLED repository variable: this workflow exists
-# before the web host does, and until the DNS cutover every push to main
-# would fail to connect. Set PUBLISH_ENABLED=true (Settings → Variables →
-# Actions) at cutover. workflow_dispatch always runs, so a manual publish is
-# available before that too - against the IP directly with
-# NRDUFOUR_HOST=<ip> just publish.
+# Until the web host exists and the DNS records point at it, this fails to
+# connect — expected for the few hours between this PR and the cutover, and
+# red on main is the honest sign that the publish target isn't live yet.
 name: Publish
 
 on:
@@ -33,7 +30,6 @@ concurrency:
 jobs:
   publish:
     runs-on: native
-    if: ${{ vars.PUBLISH_ENABLED == 'true' || github.event_name == 'workflow_dispatch' }}
     steps:
       - uses: actions/checkout@v7
 
