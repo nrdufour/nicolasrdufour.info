@@ -1,0 +1,41 @@
+# Publish the site to nemosites, the public web host on Hetzner Cloud.
+#
+# This workflow deliberately contains no deployment logic: it checks out the
+# repo and calls `just publish`, the same recipe run by hand on calypso. One
+# mechanism, two triggers - so a publish from a laptop and a publish from CI
+# cannot drift apart.
+#
+# runs-on: native is required. The publish key is a sops secret rendered onto
+# the runner host at /run/secrets/nicolasrdufour/publish_ssh_key, readable by
+# the runner's DynamicUser through the nicolasrdufour-publish group (wired up
+# in avalanche: nixos/hosts/hawk/forgejo/forgejo-runner.nix). A container job
+# cannot see that path.
+#
+# Gated on the PUBLISH_ENABLED repository variable: this workflow exists
+# before the web host does, and until the DNS cutover every push to main
+# would fail to connect. Set PUBLISH_ENABLED=true (Settings → Variables →
+# Actions) at cutover. workflow_dispatch always runs, so a manual publish is
+# available before that too - against the IP directly with
+# NRDUFOUR_HOST=<ip> just publish.
+name: Publish
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  # Two overlapping rsyncs into the same web root would interleave. Never
+  # cancel one in flight: a half-applied --delete is a broken site.
+  group: publish-nicolasrdufour
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: native
+    if: ${{ vars.PUBLISH_ENABLED == 'true' || github.event_name == 'workflow_dispatch' }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Build and publish
+        run: nix develop --command just publish
