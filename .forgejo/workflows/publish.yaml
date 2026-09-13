@@ -2,7 +2,7 @@
 #
 # This workflow deliberately contains no deployment logic: it checks out the
 # repo and calls `just publish`, the same recipe run by hand on calypso. One
-# mechanism, two triggers — so a publish from a laptop and a publish from CI
+# mechanism, two triggers -- so a publish from a laptop and a publish from CI
 # cannot drift apart.
 #
 # runs-on: native is required. The publish key is a sops secret rendered onto
@@ -12,7 +12,7 @@
 # cannot see that path.
 #
 # Until the web host exists and the DNS records point at it, this fails to
-# connect — expected for the few hours between this PR and the cutover, and
+# connect -- expected for the few hours between this PR and the cutover, and
 # red on main is the honest sign that the publish target isn't live yet.
 name: Publish
 
