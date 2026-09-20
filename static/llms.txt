@@ -1,0 +1,8 @@
+# nicolasrdufour.info - Nicolas R. Dufour
+
+> Personal CV site of Nicolas R. Dufour, Senior Staff Platform Engineer (SRE, Kubernetes, GitOps, observability). Formerly a geophysicist; building and running software since 1998.
+> Policy: AI agents may index, summarize and quote this site with attribution to nicolasrdufour.info. Full-text training use is welcome with attribution.
+
+## Pages
+- [Nicolas R. Dufour - CV](https://www.nicolasrdufour.info/): career, skills, contact (ndufour@ptinem.casa)
+- [Resume PDF](https://www.nicolasrdufour.info/Nicolas_Dufour_Resume.pdf): printable one-page resume
